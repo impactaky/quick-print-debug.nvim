@@ -16,6 +16,7 @@ function! quick_print_debug#add_line_print()
     call nvim_buf_set_virtual_text(buffer, g:quick_print_debug_ns_id, line, [[message, 'Comment']], {})
 endfunction
 
-function! quick_print_debug#generate_script()
-    return _quick_print_debug_generate_script()
+function! quick_print_debug#run()
+    let script_file = _quick_print_debug_generate_script()
+    execute ':AsyncRun gdb -q -x' script_file '--args' g:quick_print_debug#run_command
 endfunction

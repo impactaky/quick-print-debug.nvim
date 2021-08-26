@@ -11,4 +11,4 @@ endif
 
 nnoremap <silent><Plug>(quick_print_debug_line) :call quick_print_debug#add_line_print()<CR>
 nnoremap <silent><Plug>(quick_print_debug_value) :call quick_print_debug#add_value_print()<CR>
-nnoremap <silent><Plug>(quick_print_debug_run) :call quick_print_debug#add_value_run()<CR>
+nnoremap <silent><Plug>(quick_print_debug_run) :call quick_print_debug#run()<CR>

@@ -38,6 +38,7 @@ bp.commands = \'''{}\'''
     def _gen_script(self, args) -> str:
         self.script_file.truncate(0)
         self.script_file.seek(0)
+        self.script_file.write("import gdb\n")
         bufs = self.nvim.request('nvim_list_bufs')
         for buf in bufs:
             extmarks = self.nvim.request('nvim_buf_get_extmarks', buf, self.ns, [0, 0], [-1, -1], {'details': True})
